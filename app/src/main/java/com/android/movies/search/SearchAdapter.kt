@@ -1,4 +1,4 @@
-package com.android.movies.search
+package com.android.movies.main
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,8 +6,11 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.android.movies.databinding.SearchMovieBinding
+import com.android.movies.search.SearchMovie
 
-class MoviesAdapter(val onclickListener:onClickListener): ListAdapter<SearchMovie.SearchList, MoviesAdapter.MovieViewHolder>(diffCallBack) {
+class MoviesAdapter(val onclickListener: onClickListener): ListAdapter<SearchMovie.SearchList, MoviesAdapter.MovieViewHolder>(
+    diffCallBack
+) {
 
 
     class MovieViewHolder(private var binding:SearchMovieBinding) : RecyclerView.ViewHolder(binding.root){
@@ -31,7 +34,7 @@ class MoviesAdapter(val onclickListener:onClickListener): ListAdapter<SearchMovi
         return MovieViewHolder(SearchMovieBinding.inflate(LayoutInflater.from(parent.context)))
     }
 
-    class onClickListener(val clickListener: (movie:SearchMovie.SearchList)->Unit){
+    class onClickListener(val clickListener: (movie: SearchMovie.SearchList)->Unit){
         fun onClick(movie: SearchMovie.SearchList)=clickListener(movie)
     }
 }

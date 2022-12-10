@@ -31,8 +31,6 @@ class DetailsFragment : Fragment() {
         // Inflate the layout for this fragment
         binding=DataBindingUtil.inflate(inflater,R.layout.fragment_details,container,false)
 
-        var id=DetailsFragmentArgs.fromBundle(requireArguments()).id
-
         Log.i("jghjhuh",id.toString())
         viewModel.setId(id.toString())
 

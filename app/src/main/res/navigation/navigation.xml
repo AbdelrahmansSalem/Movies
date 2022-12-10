@@ -3,14 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/boxOfficeFragment">
-
+    app:startDestination="@id/homeFragment">
     <fragment
-        android:id="@+id/movieFragment"
-        android:name="com.android.movies.search.MovieFragment"
-        android:label="MovieFragment" >
+        android:id="@+id/homeFragment"
+        android:name="com.android.movies.main.HomeFragment"
+        android:label="HomeFragment" />
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.android.movies.search.SearchFragment"
+        android:label="SearchFragment" >
         <action
-            android:id="@+id/action_movieFragment_to_detailsFragment"
+            android:id="@+id/action_searchFragment_to_detailsFragment"
             app:destination="@id/detailsFragment" />
     </fragment>
     <fragment
@@ -18,21 +21,11 @@
         android:name="com.android.movies.favorites.FavoritesFragment"
         android:label="FavoritesFragment" />
     <fragment
-        android:id="@+id/aboutFragment"
-        android:name="com.android.movies.AboutFragment"
-        android:label="fragment_about"
-        tools:layout="@layout/fragment_about" />
-    <fragment
-        android:id="@+id/boxOfficeFragment"
-        android:name="com.android.movies.main.BoxOfficeFragment"
-        android:label="BoxOfficeFragment" />
-    <fragment
         android:id="@+id/detailsFragment"
         android:name="com.android.movies.details.DetailsFragment"
-        android:label="DetailsFragment" >
-        <argument
-            android:name="id"
-            app:argType="string"
-            app:nullable="true" />
-    </fragment>
+        android:label="DetailsFragment" />
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.android.movies.AboutFragment"
+        android:label="AboutFragment" />
 </navigation>

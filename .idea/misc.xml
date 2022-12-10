@@ -3,12 +3,20 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/abdel/AndroidStudioProjects/Movies/app/src/main/res/drawable/favorite.xml" value="0.1535" />
+        <entry key="..\:/Users/abdel/AndroidStudioProjects/Movies/app/src/main/res/drawable/home.xml" value="0.1535" />
+        <entry key="..\:/Users/abdel/AndroidStudioProjects/Movies/app/src/main/res/drawable/item_selector.xml" value="0.1535" />
+        <entry key="..\:/Users/abdel/AndroidStudioProjects/Movies/app/src/main/res/drawable/round_corner.xml" value="0.1535" />
+        <entry key="..\:/Users/abdel/AndroidStudioProjects/Movies/app/src/main/res/drawable/search_icon.xml" value="0.1535" />
         <entry key="..\:/Users/abdel/AndroidStudioProjects/Movies/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/abdel/AndroidStudioProjects/Movies/app/src/main/res/layout/box_office_card.xml" value="0.17617753623188406" />
         <entry key="..\:/Users/abdel/AndroidStudioProjects/Movies/app/src/main/res/layout/fragment_about.xml" value="0.13645833333333332" />
         <entry key="..\:/Users/abdel/AndroidStudioProjects/Movies/app/src/main/res/layout/fragment_box_office.xml" value="0.22" />
         <entry key="..\:/Users/abdel/AndroidStudioProjects/Movies/app/src/main/res/layout/fragment_details.xml" value="0.13385416666666666" />
         <entry key="..\:/Users/abdel/AndroidStudioProjects/Movies/app/src/main/res/layout/fragment_favorites.xml" value="0.13645833333333332" />
-        <entry key="..\:/Users/abdel/AndroidStudioProjects/Movies/app/src/main/res/layout/fragment_movie.xml" value="0.1" />
+        <entry key="..\:/Users/abdel/AndroidStudioProjects/Movies/app/src/main/res/layout/fragment_home.xml" value="0.14010416666666667" />
+        <entry key="..\:/Users/abdel/AndroidStudioProjects/Movies/app/src/main/res/layout/fragment_movie.xml" value="0.33" />
+        <entry key="..\:/Users/abdel/AndroidStudioProjects/Movies/app/src/main/res/layout/fragment_search.xml" value="0.14010416666666667" />
         <entry key="..\:/Users/abdel/AndroidStudioProjects/Movies/app/src/main/res/layout/image_slider.xml" value="0.16041666666666668" />
         <entry key="..\:/Users/abdel/AndroidStudioProjects/Movies/app/src/main/res/layout/nav_header.xml" value="0.13645833333333332" />
         <entry key="..\:/Users/abdel/AndroidStudioProjects/Movies/app/src/main/res/layout/search_movie.xml" value="0.1" />

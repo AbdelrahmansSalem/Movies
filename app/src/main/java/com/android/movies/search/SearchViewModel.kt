@@ -12,7 +12,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.withContext
 
-class MovieViewModel:ViewModel() {
+class SearchViewModel:ViewModel() {
     private var _searchData= MutableLiveData<SearchMovie?>()
     val searchData: LiveData<SearchMovie?> get() = _searchData
     var data: SearchMovie? = null

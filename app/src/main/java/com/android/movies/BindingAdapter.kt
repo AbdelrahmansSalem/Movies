@@ -2,8 +2,11 @@ package com.android.movies
 
 import android.widget.ImageView
 import androidx.databinding.BindingAdapter
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.android.movies.search.MoviesAdapter
+import com.android.movies.main.BoxOffice
+import com.android.movies.main.BoxOfficeAdapter
+import com.android.movies.main.MoviesAdapter
 import com.android.movies.search.SearchMovie
 import com.squareup.picasso.Picasso
 
@@ -16,11 +19,34 @@ fun bindRecyclerView(recyclerView: RecyclerView, data: SearchMovie?){
     }
 
 }
+
+@BindingAdapter("setBoxImage")
+fun setBoxImage(imageView: ImageView, url: BoxOffice.BoxOfficeWeekendDataDetail?){
+    url?.let {
+        Picasso.get().load(it.image)
+            .resize(880,600)
+            .error(R.drawable.ic_launcher_background)
+            .into(imageView)
+    }
+
+}
+
+
+@BindingAdapter("listBoxOfficeData")
+fun bindBoxOfficeRecyclerView(recyclerView: RecyclerView, data: BoxOffice?){
+    data?.let {
+        var adapter = BoxOfficeAdapter()
+        adapter.submitList(it.items)
+        recyclerView.adapter=adapter
+       recyclerView.layoutManager=LinearLayoutManager(recyclerView.context,LinearLayoutManager.HORIZONTAL,false)
+    }
+
+}
 @BindingAdapter("setImage")
 fun setImage(imageView: ImageView, url: SearchMovie.SearchList?){
     url?.let {
         Picasso.get().load(it.image)
-            .resize(500,500)
+            .resize(800,650)
             .error(R.drawable.ic_launcher_background)
 
             .into(imageView)

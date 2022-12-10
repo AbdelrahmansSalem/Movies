@@ -4,14 +4,18 @@
 
     <item
         android:title="Home"
-        android:id="@+id/boxOfficeFragment"/>
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/home"/>
     <item
         android:title="Search"
-        android:id="@+id/movieFragment"/>
+        android:id="@+id/searchFragment"
+        android:icon="@drawable/search_icon"/>
     <item
         android:title="My Favorites"
-        android:id="@+id/favoritesFragment"/>
+        android:id="@+id/favoritesFragment"
+        android:icon="@drawable/favorite"/>
     <item
         android:title="About Us"
-        android:id="@+id/aboutFragment"/>
+        android:id="@+id/aboutFragment"
+        android:icon="@drawable/info"/>
 </menu>
