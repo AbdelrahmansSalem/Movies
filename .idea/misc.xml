@@ -14,11 +14,13 @@
         <entry key="..\:/Users/abdel/AndroidStudioProjects/Movies/app/src/main/res/layout/fragment_box_office.xml" value="0.22" />
         <entry key="..\:/Users/abdel/AndroidStudioProjects/Movies/app/src/main/res/layout/fragment_details.xml" value="0.13385416666666666" />
         <entry key="..\:/Users/abdel/AndroidStudioProjects/Movies/app/src/main/res/layout/fragment_favorites.xml" value="0.13645833333333332" />
-        <entry key="..\:/Users/abdel/AndroidStudioProjects/Movies/app/src/main/res/layout/fragment_home.xml" value="0.14010416666666667" />
+        <entry key="..\:/Users/abdel/AndroidStudioProjects/Movies/app/src/main/res/layout/fragment_home.xml" value="0.21" />
         <entry key="..\:/Users/abdel/AndroidStudioProjects/Movies/app/src/main/res/layout/fragment_movie.xml" value="0.33" />
         <entry key="..\:/Users/abdel/AndroidStudioProjects/Movies/app/src/main/res/layout/fragment_search.xml" value="0.14010416666666667" />
         <entry key="..\:/Users/abdel/AndroidStudioProjects/Movies/app/src/main/res/layout/image_slider.xml" value="0.16041666666666668" />
+        <entry key="..\:/Users/abdel/AndroidStudioProjects/Movies/app/src/main/res/layout/most_popular_card.xml" value="0.12760416666666666" />
         <entry key="..\:/Users/abdel/AndroidStudioProjects/Movies/app/src/main/res/layout/nav_header.xml" value="0.13645833333333332" />
+        <entry key="..\:/Users/abdel/AndroidStudioProjects/Movies/app/src/main/res/layout/search_card.xml" value="0.2892459826946848" />
         <entry key="..\:/Users/abdel/AndroidStudioProjects/Movies/app/src/main/res/layout/search_movie.xml" value="0.1" />
         <entry key="..\:/Users/abdel/AndroidStudioProjects/Movies/app/src/main/res/menu/navdrawer_menu.xml" value="0.13645833333333332" />
       </map>

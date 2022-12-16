@@ -3,6 +3,7 @@ package com.android.movies.network
 import com.android.movies.Constants
 import com.android.movies.details.MovieDetails
 import com.android.movies.main.BoxOffice
+import com.android.movies.main.MostPopular
 import com.android.movies.search.SearchMovie
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
@@ -25,12 +26,12 @@ var retrofit= Retrofit.Builder()
 interface MovieApiService{
     @GET("/API/SearchTitle/{apiKey}/{expression}")
     suspend fun searchMovie(@Path("apiKey")apiKey:String, @Path("expression")expression:String?): SearchMovie
-
     @GET("/en/API/BoxOffice/{apiKey}")
-    suspend fun boxOffice(@Path("apiKey")apiKey:String): BoxOffice
+    suspend fun getBoxOffice(@Path("apiKey")apiKey:String): BoxOffice
     @GET("/en/API/Title/{apiKey}/{id}")
     suspend fun getDetails(@Path("apiKey")apiKey:String,@Path("id") id:String): MovieDetails
-
+    @GET("/en/API/MostPopularMovies/{apiKey}")
+    suspend fun getMostPopular(@Path("apiKey")apiKey:String): MostPopular
 }
 
 object MovieApi{

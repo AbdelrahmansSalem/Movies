@@ -4,29 +4,37 @@ import android.widget.ImageView
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.android.movies.main.BoxOffice
-import com.android.movies.main.BoxOfficeAdapter
-import com.android.movies.main.MoviesAdapter
+import com.android.movies.main.*
 import com.android.movies.search.SearchMovie
 import com.squareup.picasso.Picasso
 
-@BindingAdapter("listData")
-fun bindRecyclerView(recyclerView: RecyclerView, data: SearchMovie?){
+@BindingAdapter("listMostPopularData")
+fun bindRecyclerView(recyclerView: RecyclerView, data: MostPopular?){
     data?.let {
-       var adapter =recyclerView.adapter as MoviesAdapter
-        adapter.submitList(it.results)
-
+        var adapter=MostPopularAdapter()
+        adapter.submitList(it.items)
+        recyclerView.adapter=adapter
     }
 
 }
 
-@BindingAdapter("setBoxImage")
-fun setBoxImage(imageView: ImageView, url: BoxOffice.BoxOfficeWeekendDataDetail?){
+@BindingAdapter("setImage")
+fun setImage(imageView: ImageView, url: String?){
     url?.let {
-        Picasso.get().load(it.image)
+        Picasso.get().load(it)
             .resize(880,600)
             .error(R.drawable.ic_launcher_background)
             .into(imageView)
+    }
+
+}
+
+@BindingAdapter("listSearchData")
+fun bindSearchRecyclerView(recyclerView: RecyclerView, data: SearchMovie?){
+    data?.let {
+        val adapter=SearchAdapter()
+        adapter.submitList(it.results)
+        recyclerView.adapter=adapter
     }
 
 }
@@ -38,17 +46,14 @@ fun bindBoxOfficeRecyclerView(recyclerView: RecyclerView, data: BoxOffice?){
         var adapter = BoxOfficeAdapter()
         adapter.submitList(it.items)
         recyclerView.adapter=adapter
-       recyclerView.layoutManager=LinearLayoutManager(recyclerView.context,LinearLayoutManager.HORIZONTAL,false)
     }
 
 }
-@BindingAdapter("setImage")
-fun setImage(imageView: ImageView, url: SearchMovie.SearchList?){
+@BindingAdapter("setSearchImage")
+fun setSearchImage(imageView: ImageView, url: String?){
     url?.let {
-        Picasso.get().load(it.image)
-            .resize(800,650)
+        Picasso.get().load(url)
             .error(R.drawable.ic_launcher_background)
-
             .into(imageView)
     }
 

@@ -14,8 +14,12 @@ import com.android.movies.databinding.FragmentHomeBinding
 class HomeFragment : Fragment() {
     lateinit var binding: FragmentHomeBinding
 
-    private val bxOfficeViewModel: BoxOfficeViewModel by lazy {
+    private val boxOfficeViewModel: BoxOfficeViewModel by lazy {
         ViewModelProvider(this).get(BoxOfficeViewModel::class.java)
+    }
+
+    private val mostPopularViewModel: MostPopularViewModel by lazy {
+        ViewModelProvider(this).get(MostPopularViewModel::class.java)
     }
 
     override fun onCreateView(
@@ -26,7 +30,8 @@ class HomeFragment : Fragment() {
         binding.lifecycleOwner = this
 
 
-        binding.boxOfficeViewModel=bxOfficeViewModel
+        binding.boxOfficeViewModel=boxOfficeViewModel
+        binding.mostPopularViewModel=mostPopularViewModel
 
 
 

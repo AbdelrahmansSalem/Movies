@@ -7,9 +7,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.android.movies.databinding.BoxOfficeCardBinding
 
-class BoxOfficeAdapter():ListAdapter<BoxOffice.BoxOfficeWeekendDataDetail, BoxOfficeAdapter.viewHolder>(
-    diffCallBack
-)  {
+class BoxOfficeAdapter():ListAdapter<BoxOffice.BoxOfficeWeekendDataDetail, BoxOfficeAdapter.viewHolder>(diffCallBack)  {
     class viewHolder(private val binding: BoxOfficeCardBinding):RecyclerView.ViewHolder(binding.root) {
         fun bind(boxOffice: BoxOffice.BoxOfficeWeekendDataDetail){
             binding.boxOffice=boxOffice

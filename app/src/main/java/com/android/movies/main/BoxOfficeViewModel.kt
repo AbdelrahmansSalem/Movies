@@ -31,7 +31,7 @@ class BoxOfficeViewModel:ViewModel() {
     suspend fun getData() {
         withContext(Dispatchers.Unconfined){
             try{
-                data= MovieApi.movieApiService.boxOffice(Constants.API_KEY1)
+                data= MovieApi.movieApiService.getBoxOffice(Constants.API_KEY)
                 Log.i("Errorrrr",data?.items?.size.toString())
             }
             catch (exe:Exception){

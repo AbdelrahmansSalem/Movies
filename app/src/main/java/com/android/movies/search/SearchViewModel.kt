@@ -37,28 +37,24 @@ class SearchViewModel:ViewModel() {
 
     fun getData(){
         viewModelScope.launch{
-            if (name.value?.isEmpty() == true){
                 runBlocking {
-                    getMovie("mulan")
-                    _searchData.value=data
-                }
+                    if (name.value?.isEmpty() == true){
+
+                    }
+                    else{
+                        getMovie(name.value)
+                        _searchData.value=data
+                        name.value=""
+                    }
+                    }
 
             }
-            else{
-                runBlocking {
-                    getMovie(name.value)
-                    _searchData.value=data
-                }
-
-            }
-        }
-
     }
 
     suspend fun getMovie(searchName:String?) {
         withContext(Dispatchers.Unconfined){
             try{
-                data= MovieApi.movieApiService.searchMovie(Constants.API_KEY1,searchName)
+                data= MovieApi.movieApiService.searchMovie(Constants.API_KEY,searchName)
             }
             catch (exe:Exception){
                 Log.i("Errorrrr",exe.message.toString())
