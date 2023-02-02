@@ -4,12 +4,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <data>
         <variable
-            name="boxOfficeViewModel"
-            type="com.android.movies.main.BoxOfficeViewModel" />
+            name="MainViewModel"
+            type="com.android.movies.main.MainViewModel" />
 
-        <variable
-            name="mostPopularViewModel"
-            type="com.android.movies.main.MostPopularViewModel" />
     </data>
 
 
@@ -43,7 +40,7 @@
             android:id="@+id/box_office"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            listBoxOfficeData="@{boxOfficeViewModel.boxOffice}"
+            listBoxOfficeData="@{MainViewModel.boxOffice}"
             android:orientation="horizontal"
             android:layout_marginBottom="15dp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
@@ -87,7 +84,7 @@
             android:id="@+id/most_popular"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            listMostPopularData="@{mostPopularViewModel.mostPopular}"
+            listMostPopularData="@{MainViewModel.mostPopular}"
             android:orientation="horizontal"
             android:layout_marginBottom="15dp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"

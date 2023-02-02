@@ -31,13 +31,14 @@ class MostPopularAdapter(): ListAdapter<MostPopular.MostPopularDataDetail, MostP
         override fun areItemsTheSame(
             oldItem: MostPopular.MostPopularDataDetail, newItem: MostPopular.MostPopularDataDetail
         ): Boolean {
-            return oldItem==newItem
+            return oldItem.id==newItem.id
         }
 
         override fun areContentsTheSame(
             oldItem: MostPopular.MostPopularDataDetail, newItem: MostPopular.MostPopularDataDetail
         ): Boolean {
-            return oldItem.id==newItem.id
+
+            return newItem == oldItem
         }
     }
 

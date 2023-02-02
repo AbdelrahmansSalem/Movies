@@ -4,6 +4,8 @@ import android.widget.ImageView
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.android.movies.favorites.FavoritesAdapter
+import com.android.movies.favorites.localData.MovieDB
 import com.android.movies.main.*
 import com.android.movies.search.SearchMovie
 import com.squareup.picasso.Picasso
@@ -16,6 +18,12 @@ fun bindRecyclerView(recyclerView: RecyclerView, data: MostPopular?){
         recyclerView.adapter=adapter
     }
 
+}
+@BindingAdapter("listfavorites")
+fun bindfavorites(recyclerView: RecyclerView, data: List<MovieDB>?){
+    var adapter=FavoritesAdapter()
+    adapter.submitList(data)
+    recyclerView.adapter=adapter
 }
 
 @BindingAdapter("setImage")
@@ -43,17 +51,17 @@ fun bindSearchRecyclerView(recyclerView: RecyclerView, data: SearchMovie?){
 @BindingAdapter("listBoxOfficeData")
 fun bindBoxOfficeRecyclerView(recyclerView: RecyclerView, data: BoxOffice?){
     data?.let {
-        var adapter = BoxOfficeAdapter()
+        var adapter = recyclerView.adapter as BoxOfficeAdapter
         adapter.submitList(it.items)
-        recyclerView.adapter=adapter
     }
 
 }
 @BindingAdapter("setSearchImage")
 fun setSearchImage(imageView: ImageView, url: String?){
-    url?.let {
+    if (!url.isNullOrEmpty()){
         Picasso.get().load(url)
             .error(R.drawable.ic_launcher_background)
+            .placeholder(R.drawable.movieheader)
             .into(imageView)
     }
 

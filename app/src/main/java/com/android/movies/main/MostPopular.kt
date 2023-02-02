@@ -1,10 +1,10 @@
 package com.android.movies.main
 
-class MostPopular(
+data class MostPopular(
     var items: List<MostPopularDataDetail>,
     var errorMessage: String
 ) {
-    class MostPopularDataDetail(
+    data class MostPopularDataDetail(
         var id: String,
         var rank: String,
         var rankUpDown: String,

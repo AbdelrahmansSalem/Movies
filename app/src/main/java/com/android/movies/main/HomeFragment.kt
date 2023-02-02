@@ -5,23 +5,27 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
 import com.android.movies.R
 import com.android.movies.databinding.FragmentHomeBinding
+import kotlinx.coroutines.DelicateCoroutinesApi
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 
 class HomeFragment : Fragment() {
     lateinit var binding: FragmentHomeBinding
 
-    private val boxOfficeViewModel: BoxOfficeViewModel by lazy {
-        ViewModelProvider(this).get(BoxOfficeViewModel::class.java)
+    private val mainViewModel: MainViewModel by lazy {
+        ViewModelProvider(this).get(MainViewModel::class.java)
     }
 
-    private val mostPopularViewModel: MostPopularViewModel by lazy {
-        ViewModelProvider(this).get(MostPopularViewModel::class.java)
-    }
 
+
+    @OptIn(DelicateCoroutinesApi::class)
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -30,9 +34,13 @@ class HomeFragment : Fragment() {
         binding.lifecycleOwner = this
 
 
-        binding.boxOfficeViewModel=boxOfficeViewModel
-        binding.mostPopularViewModel=mostPopularViewModel
+        binding.mainViewModel=mainViewModel
 
+        binding.boxOffice.adapter=BoxOfficeAdapter(BoxOfficeAdapter.onClickListener {
+            GlobalScope.launch{
+            mainViewModel.savaMovie(it,requireActivity())
+            }
+        })
 
 
         return binding.root

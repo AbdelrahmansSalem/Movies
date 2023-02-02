@@ -41,11 +41,11 @@ class SearchAdapter(): ListAdapter<SearchMovie.SearchList, SearchAdapter.MovieVi
 
 object diffCallBack: DiffUtil.ItemCallback<SearchMovie.SearchList>(){
     override fun areItemsTheSame(oldItem: SearchMovie.SearchList, newItem: SearchMovie.SearchList): Boolean {
-        return oldItem ==newItem
+        return oldItem.id ==newItem.id
     }
 
     override fun areContentsTheSame(oldItem: SearchMovie.SearchList, newItem: SearchMovie.SearchList): Boolean {
-        return oldItem.id==newItem.id
+        return oldItem==newItem
     }
 
 }

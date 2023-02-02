@@ -1,10 +1,10 @@
 package com.android.movies.main
 
-class BoxOffice (
+data class BoxOffice (
     var items: ArrayList<BoxOfficeWeekendDataDetail>,
     var errorMessage:String
 ) {
-    class BoxOfficeWeekendDataDetail (
+    data class BoxOfficeWeekendDataDetail (
         var id: String,
         var rank : String,
         var title : String,

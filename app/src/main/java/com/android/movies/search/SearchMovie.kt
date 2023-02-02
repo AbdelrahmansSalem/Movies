@@ -1,14 +1,14 @@
 package com.android.movies.search
 
 
-class SearchMovie (
+data class SearchMovie (
     var searchType: String,
     var expression: String,
 
     var results: List<SearchList>,
     var errorMessage: String
 ){
-    class SearchList (
+    data class SearchList (
         var id: String,
         var resultType: String,
         var image: String,

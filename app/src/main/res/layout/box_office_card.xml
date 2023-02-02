@@ -29,7 +29,6 @@
             android:scaleType="fitXY"
             android:src="@drawable/movieheader" />
 
-
     </RelativeLayout>
 </androidx.cardview.widget.CardView>
 </layout>
