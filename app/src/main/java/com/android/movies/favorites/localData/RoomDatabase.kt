@@ -17,7 +17,7 @@ fun getDatabase(context: Context): MovieDatabase {
         if(!::INSTANCE.isInitialized){
             INSTANCE=Room.databaseBuilder(
                 context.applicationContext ,
-                MovieDatabase::class.java, "Movies")
+                MovieDatabase::class.java, "Favorites")
                 .build()
         }
     }

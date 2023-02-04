@@ -8,11 +8,9 @@ import androidx.room.Query
 @Dao
 interface MovieDao {
 
-    @Query("select * from Movies")
-    fun getAllData():List<MovieDB>
+    @Query("select * from favorite_movies")
+    fun getAllData():List<MovieDB>?
 
-    @Query("delete from Movies")
-    fun deleteAllData():List<MovieDB>
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     fun insertMovie(movieDB: MovieDB)

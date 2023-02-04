@@ -65,9 +65,9 @@ class MainViewModel(application: Application):AndroidViewModel(application) {
 
     }
 
-    suspend fun savaMovie(movie: BoxOffice.BoxOfficeWeekendDataDetail,context: Context){
+    suspend fun savaMovie(movie: BoxOffice.BoxOfficeWeekendDataDetail){
         withContext(Dispatchers.Default){
-            movieDatabase.movieDao.insertMovie(getDatabaseModel(movie,context))
+            movieDatabase.movieDao.insertMovie(getDatabaseModel(movie))
         }
 
     }

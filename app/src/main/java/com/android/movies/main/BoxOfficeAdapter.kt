@@ -27,6 +27,7 @@ class BoxOfficeAdapter(val onclickListener:onClickListener):ListAdapter<BoxOffic
         var item =getItem(position)
         holder.bind(item)
         holder.itemView.setOnClickListener{
+
             onclickListener.onClick(item)
         }
     }
@@ -50,3 +51,4 @@ class BoxOfficeAdapter(val onclickListener:onClickListener):ListAdapter<BoxOffic
 
     }
 }
+

@@ -12,6 +12,7 @@ import com.android.movies.favorites.localData.MovieDB
 class FavoritesAdapter():ListAdapter<MovieDB,FavoritesAdapter.viewHolder>(diffCallBack) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): viewHolder {
+
         return viewHolder(FavoriteCardBinding.inflate(LayoutInflater.from(parent.context)))
     }
 

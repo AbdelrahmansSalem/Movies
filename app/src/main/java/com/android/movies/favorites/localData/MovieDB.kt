@@ -13,20 +13,22 @@ import coil.request.ImageRequest
 import coil.request.SuccessResult
 import com.android.movies.main.BoxOffice
 
-@Entity(tableName = "Movies")
+@Entity(tableName = "favorite_movies")
 data class MovieDB (
     @PrimaryKey val movieId:String,
-      val title:String?,
-     val image:String?,
+      val title:String,
+     val image:String,
 )
 
-suspend fun getDatabaseModel(movie: BoxOffice.BoxOfficeWeekendDataDetail,context: Context):MovieDB{
+suspend fun getDatabaseModel(movie: BoxOffice.BoxOfficeWeekendDataDetail):MovieDB{
 //    var imageLoader= ImageLoader(context)
 //    val request = ImageRequest.Builder(context)
 //        .data(movie.image)
 //        .build()
 //    val result:Drawable = (imageLoader.execute(request) as SuccessResult).drawable
 //    var bitmap=(result as BitmapDrawable).bitmap
+
+
     return MovieDB(movie.id,movie.title,movie.image)
 }
 

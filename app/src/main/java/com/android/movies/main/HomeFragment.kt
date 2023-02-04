@@ -38,7 +38,7 @@ class HomeFragment : Fragment() {
 
         binding.boxOffice.adapter=BoxOfficeAdapter(BoxOfficeAdapter.onClickListener {
             GlobalScope.launch{
-            mainViewModel.savaMovie(it,requireActivity())
+            mainViewModel.savaMovie(it)
             }
         })
 

@@ -12,19 +12,24 @@ import kotlinx.coroutines.*
 
 class FavoriteViewModel(application: Application):AndroidViewModel(application) {
     private var dataBase= getDatabase(application)
-    private var _movies=MutableLiveData<List<MovieDB>>()
-    val movies:LiveData<List<MovieDB>> get() = _movies
+    private var _movies=MutableLiveData<List<MovieDB>?>()
+    val movies:LiveData<List<MovieDB>?> get() = _movies
+    var data :List<MovieDB>?=null
     init {
         viewModelScope.launch{
+            runBlocking {
                 getallData()
+                _movies.value=data
+            }
 
         }
     }
 
     suspend fun getallData(){
-        withContext(Dispatchers.IO){
+        withContext(Dispatchers.Default){
             try{
-                _movies.value=dataBase.movieDao.getAllData()
+                data=dataBase.movieDao.getAllData()
+                Log.i("dataaaaa", movies.value?.get(0)?.title.toString())
             }
             catch (e:Exception){
                 Log.i("Exception",e.toString())

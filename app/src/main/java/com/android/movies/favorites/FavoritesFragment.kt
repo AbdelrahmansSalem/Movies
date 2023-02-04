@@ -23,7 +23,6 @@ class FavoritesFragment : Fragment() {
         // Inflate the layout for this fragment
         val binding = DataBindingUtil.inflate<FragmentFavoritesBinding>(inflater, R.layout.fragment_favorites, container, false)
 
-
        binding.favoriteViewModel=favoriteViewModel
 
 
